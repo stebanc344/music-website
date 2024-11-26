@@ -1,18 +1,17 @@
 <body>
     <!-- update the header -->
-    <h1>Modify <%= instrument.name %></h1>
-    <form action="/instruments/<%=instrument._id%>?_method=PUT" method="POST"></form>
+    <h1>Edit <%= instrument.name %></h1>
+
+    <form action="/instruments/<%=instrument._id%>?_method=PUT" method="POST">
+
       <label for="name">Name:</label>
       <input type="text" name="name" value="<%= instrument.name %>" />
   
-      <label for="canIplay">Ready to Play?</label>
+      <label for="readyToplay">Ready to Play?</label>
 
-      <input type="checkbox" name="canIplay" checked />
-
-      <input type="checkbox" name="canIplay" <% if (instrument.canIplay) { %>checked<% } %> >
-
-      <!-- update the button text -->
+      <input type="checkbox" name="readyToplay" <% if (instrument.readyToplay) { %>checked<% } %> >
+    <!-- update the button text -->
       <button type="submit">Update Instrument</button>
     </form>
-    <a href="/instruments">Back to Instruments</a>
-  </body>
+      <a href="/instruments">Back to Instruments</a>
+</body>

@@ -9,9 +9,7 @@
     <h1>All Instruments</h1>
     <ul>
         <% instruments.forEach(instrument => { %>
-          <li>
-            <a href="/instruments/<%= instrument._id %>"> <%= instrument.name %> </a>
-          </li>
+          <li><a href="/instruments/<%= instrument._id %>"> <%= instrument.name %> </a></li>
         <% }); %>
       </ul>
   </body>

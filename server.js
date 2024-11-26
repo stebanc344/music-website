@@ -71,16 +71,14 @@ app.get("/instruments/:instrumentId/edit", async (req, res) => {
 // server.js
 
 app.put("/instruments/:instrumentId", async (req, res) => {
-  // Handle the 'canIplay' checkbox data
-  if (req.body.canIplay === "on") {
-    req.body.canIplay = true;
+  // Handle the 'readyToplay' checkbox data
+  if (req.body.readyToplay === "on") {
+    req.body.readyToplay = true;
   } else {
-    req.body.canIplay = false;
+    req.body.readyToplay = false;
   }
-  
-  // Update the fruit in the database
+   // Update the fruit in the database
   await instrument.findByIdAndUpdate(req.params.instrumentId, req.body);
-
   // Redirect to the fruit's show page to see the updates
   res.redirect(`/instruments/${req.params.instrumentId}`);
 });
