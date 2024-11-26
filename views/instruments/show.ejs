@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= instrument.name %></title> <!-- Dynamic title based on instrument name -->
+  </head>
+  <body>
+    <h1><%= instrument.name %></h1> <!-- Display instrument name -->
+    <% if (instrument.canIplay) { %>
+        <p>I can play this instrument!</p>
+    <% } else { %>
+        <p>I cannot play this instrument!</p>
+    <% } %>
+    <form action="/instruments/<%=instrument._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= instrument.name %></button>
+      </form>
+      <!-- add edit page link here -->
+      <a href="/instruments/<%= instrument._id %>/edit">Edit <%= instrument.name %></a>
+  </body>
+  <a href="/instruments">Back to Instruments</a>
+  </html>
+

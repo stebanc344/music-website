@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add an Instrument</title>
+  </head>
+  <body>
+    <h1>Add A New Instrument!</h1>
+  </body>
+</html>
+
+<body>
+    <h1>Collections</h1>
+    <form action="/instruments" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+  
+      <label for="canIplay">Can I play this Instrument?</label>
+      <input type="checkbox" name="readyToplay" id="readyToplay" />
+  
+      <button type="submit">New Instrument</button>
+    </form>
+    <a href="/instruments/">Back to Instruments</a>
+  </body>

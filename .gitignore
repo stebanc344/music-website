@@ -1,0 +1,4 @@
+.env
+node_modules
+SECRET_NUMBER=13
+PASSWORD=12345
