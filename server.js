@@ -47,10 +47,10 @@ app.get("/instruments/:instrumentId", async (req, res) => {
 
 // POST /Instruments
 app.post("/instruments", async (req, res) => {
-  if (req.body.readyToplay=== "on") {
-    req.body.readyToplay = true;
+  if (req.body.canIplaythis=== "on") {
+    req.body.canIplaythis = true;
   } else {
-    req.body.readyToplay = false;
+    req.body.canIplaythis = false;
   }
   await instrument.create(req.body);
   res.redirect("/instruments");
@@ -71,11 +71,12 @@ app.get("/instruments/:instrumentId/edit", async (req, res) => {
 // server.js
 
 app.put("/instruments/:instrumentId", async (req, res) => {
-  // Handle the 'readyToplay' checkbox data
-  if (req.body.readyToplay === "on") {
-    req.body.readyToplay = true;
+  // Handle the 'canIplaythis' checkbox data
+  if (req.body.canIplaythis === "on") {
+    console.log(req.body)
+    req.body.canIplaythis = true;
   } else {
-    req.body.readyToplay = false;
+    req.body.canIplaythis = false;
   }
    // Update the fruit in the database
   await instrument.findByIdAndUpdate(req.params.instrumentId, req.body);
